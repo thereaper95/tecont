@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Espace Client TotalEnergies</title>
-</head>
-<body>
-  <h1>Formulaire de Contestation</h1>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <label>Numéro client: <input type="text" name="numero_client" required></label><br>
-    <label>Nom: <input type="text" name="nom" required></label><br>
-    <label>Email: <input type="email" name="_replyto" required></label><br>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Client – TotalEnergies</title>
+  <style>
+    /* Couleurs et polices */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
 
-    <label>Type de contestation:</label><br>
-    <select name="type_contestation" required>
-      <option value="frais">Frais facturés</option>
-      <option value="index_debut">Index début de contrat</option>
-      <option value="index_cours">Index en cours de contrat</option>
-      <option value="index_fin">Index fin de contrat</option>
-    </select><br>
+    header {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-    <label>Votre message:</label><br>
-    <textarea name="message" rows="5" required></textarea><br>
+    header img {
+      max-width: 200px;
+    }
 
-    <button type="submit">Envoyer la contestation</button>
-  </form>
-</body>
-</html>
+    h1 {
+      color: #e30613;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      background-c
