@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Espace Client – TotalEnergies</title>
   <style>
-    /* Styles modernes */
+    :root {
+      --primary: #e30613;
+      --bg: #f4f4f4;
+      --text: #333;
+      --white: #fff;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 0;
-      color: #333;
+      background-color: var(--bg);
+      color: var(--text);
     }
 
     header {
-      background-color: #fff;
+      background-color: var(--white);
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     header img {
-      max-width: 250px;
+      max-width: 220px;
       height: auto;
-    }
-
-    h1 {
-      color: #e30613;
-      margin-top: 20px;
-      font-size: 24px;
     }
 
     main {
       max-width: 600px;
-      margin: 40px auto;
-      background-color: white;
-      padding: 30px;
+      margin: 30px auto;
+      background: var(--white);
+      padding: 25px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
+    h1 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
     label {
       display: block;
-      margin-bottom: 10px;
       font-weight: bold;
+      margin-bottom: 5px;
     }
 
     input, select, textarea {
@@ -53,17 +58,21 @@
       margin-bottom: 20px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      padding: 5px;
     }
 
     button {
-      background-color: #e30613;
-      color: white;
+      background-color: var(--primary);
+      color: var(--white);
       padding: 12px 20px;
       border: none;
       border-radius: 5px;
-      cursor: pointer;
       font-size: 16px;
+      cursor: pointer;
     }
 
     button:hover {
@@ -72,22 +81,36 @@
 
     footer {
       text-align: center;
-      margin-top: 40px;
       font-size: 0.9em;
       color: #777;
+      margin: 40px 0 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      main {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      input, select, textarea {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Logo PNG de TotalEnergies -->
     <img src="https://www.totalenergies.com/sites/g/files/nytnzq121/files/styles/image_1200x675/public/atoms/image/TotalEnergies_Logo_RGB.png" alt="Logo TotalEnergies">
   </header>
 
   <main>
     <h1>Formulaire de Contestation</h1>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+    <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
       <label for="numero_client">Numéro client</label>
       <input type="text" id="numero_client" name="numero_client" required>
 
@@ -109,13 +132,16 @@
       <label for="message">Détails de la contestation</label>
       <textarea id="message" name="message" rows="5" required></textarea>
 
+      <label for="justificatif">Joindre un justificatif (PDF ou image)</label>
+      <input type="file" id="justificatif" name="justificatif" accept=".pdf, .jpg, .jpeg, .png">
+
       <button type="submit">Envoyer la contestation</button>
     </form>
   </main>
 
   <footer>
     &copy; 2025 TotalEnergies – Service Contestation Client
-</footer>
+  </footer>
 
 </body>
 </html>
