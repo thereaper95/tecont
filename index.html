@@ -32,4 +32,86 @@
     main {
       max-width: 600px;
       margin: 40px auto;
-      background-c
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #e30613;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #c00510;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/TotalEnergies_logo.svg/2560px-TotalEnergies_logo.svg.png" alt="Logo TotalEnergies">
+  </header>
+
+  <main>
+    <h1>Formulaire de Contestation</h1>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="numero_client">Numéro client</label>
+      <input type="text" id="numero_client" name="numero_client" required>
+
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="type_contestation">Type de contestation</label>
+      <select id="type_contestation" name="type_contestation" required>
+        <option value="">-- Sélectionnez --</option>
+        <option value="frais">Frais facturés</option>
+        <option value="index_debut">Index début de contrat</option>
+        <option value="index_cours">Index en cours de contrat</option>
+        <option value="index_fin">Index fin de contrat</option>
+      </select>
+
+      <label for="message">Détails de la contestation</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Envoyer la contestation</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 TotalEnergies – Service Contestation Client
+  </footer>
+
+</body>
+</html>
